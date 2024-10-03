@@ -1,1 +1,4 @@
-spring.application.name=coupon-system
+spring:
+  data:
+    redis:
+      host: localhost
