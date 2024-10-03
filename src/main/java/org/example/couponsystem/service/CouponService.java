@@ -47,7 +47,8 @@ public class CouponService {
 			);
 
 		for (Object people : queue) {
-			Long rank = redisTemplate.opsForZSet().rank(people.toString(), people);
+			Long rank = redisTemplate.opsForZSet().rank(event.toString(), people);
+
 			log.info("'{}'님의 현재 남은 대기열은 {}명 입니다.", people, rank);
 		}
 	}
@@ -61,6 +62,7 @@ public class CouponService {
 			Coupon coupon = new Coupon(event);
 			log.info("'{}'님의 {} 쿠폰이 발급되었습니다 ({})", people, coupon.getEvent().getName(), coupon.getCode());
 			redisTemplate.opsForZSet().remove(event.toString(), people);
+
 			this.eventCount.decrease();
 		}
 	}

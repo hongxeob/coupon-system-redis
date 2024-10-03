@@ -32,7 +32,7 @@ class CouponServiceTest {
 		List<Thread> workers = Stream
 			.generate(() -> new Thread(new AddQueueWorker(countDownLatch, bMartEvent)))
 			.limit(people)
-			.collect(Collectors.toList());
+			.toList();
 		workers.forEach(Thread::start);
 		countDownLatch.await();
 		Thread.sleep(5000);
