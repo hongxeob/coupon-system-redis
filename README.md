@@ -1,1 +1,1 @@
-# coupon-system-redis
+# 🎫 Redis Sorted Set으로 구현하는 선착순 쿠폰 발급 시스템
