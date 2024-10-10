@@ -17,7 +17,7 @@ public class EventScheduler {
 	/**
 	 * 1초마다 스케줄링
 	 * 쿠폰 n개가 모두 발급되면 이벤트 종료
-	 * 이벤트 종료가 되지 않았다면, 쿠폰 발행 후 남은 잔여 순번 표출
+	 * 이벤트 종료가 되지 않았다면, 쿠폰 발행 후 남은 잔여 순번 표시
 	 */
 	@Scheduled(fixedDelay = 1000)
 	private void couponEventScheduler() {
